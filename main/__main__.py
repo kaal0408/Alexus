@@ -2,7 +2,6 @@
 
 from .client import bot, asst
 from pyrogram.errors import AccessTokenInvalid, ApiIdInvalid, ApiIdPublishedFlood
-from pytgcalls import PyTgCalls
 from pytgcalls import idle as pyidle
 from pytgcalls import PyTgCalls
 
