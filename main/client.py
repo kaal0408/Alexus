@@ -9,7 +9,7 @@ bot = Client(
     session_name=SESSION,
     api_id=API_ID,
     api_hash=API_HASH,
-    plugins={'root': 'main.modules'}
+    plugins={'root': 'modules'}
 )
 
 asst = Client(
@@ -17,5 +17,5 @@ asst = Client(
   api_id = API_ID,
   api_hash = API_HASH,
   bot_token = BOT_TOKEN,
-  plugins={'root': "main.modules"}
+  plugins={'root': "modules"}
 )
