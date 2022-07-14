@@ -12,4 +12,4 @@ async def ping(msg: Message):
     start_time = datetime.now()
     end_time = datetime.now()
     uptime = ((end_time - start_time).microseconds / 1000)
-    await asst.send_message(msg.chat.id, f"**P O N G!!**\nMy MS {uptime}")
+    await asst.send_message(msg.chat.id, "❖𝗣 𝗢 𝗡 𝗚❖ ♪\nᴍs:{uptime}s!!")
