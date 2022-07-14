@@ -1,0 +1,37 @@
+{
+    "name": "private Music",
+    "logo": "https://te.legra.ph/file/24add7d3f42fdf0a909c7.jpg",
+    "description": "Music allow you to stream music trought the telegram voice chat feature.",
+    "keywords": [
+        "music", 
+        "voice chat", 
+        "telegram"
+    ],
+    "repository": "https://github.com/silent-Devs/Alexus",
+    "stack": "container",
+    "env": {
+    "API_ID": {
+    "description": "Your Api_id",
+    "value": ""
+    },
+    "API_HASH": {
+      "description": "Your API_HASH",
+      "value": ""
+    },
+    "BOT_TOKEN": {
+     "description": "your bot token pls",
+     "value": ""
+    },
+    "SESSION": {
+      "description": "your assistance account session", 
+      "value": ""
+    }
+    
+  }, 
+"formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
