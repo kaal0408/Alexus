@@ -8,7 +8,7 @@ from pyrogram.types import Message
 
 
 @asst.on_message(filters.command("ping") & filters.all)
-async def ping(msg: Message):
+async def ping(msg):
     start_time = datetime.now()
     end_time = datetime.now()
     uptime = ((end_time - start_time).microseconds / 1000)
