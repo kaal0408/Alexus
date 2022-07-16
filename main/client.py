@@ -6,7 +6,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 SESSION = os.environ.get("SESSION", "")
 
 bot = Client(
-    session_string=SESSION,
+    name=SESSION,
     api_id=API_ID,
     api_hash=API_HASH,
     plugins={'root': 'modules'}
