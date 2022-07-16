@@ -19,7 +19,7 @@ async def bash(cmd):
 
 @bot.on_message(filters.command("bash", ".") & filters.me)
 async def bash(_, msg: Message):
-    await msg.edit("Processing..")
+
     await msg.edit("__Processing...__")
     try:
         cmd = msg.text.split(" ", maxsplit=1)[1]
