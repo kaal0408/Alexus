@@ -2,7 +2,9 @@ import re
 from main.client import bot 
 from pyrogram import filters 
 from pyrogram.types import Message
-
+DEV = [
+1366616835 # @Alone_loverboy
+]
 STATS = []
 
 @bot.on_message(filters.command(pattern="stats"))
