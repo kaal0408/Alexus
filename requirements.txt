@@ -1,4 +1,4 @@
 requests
-pyrogram
+Pyrogram==1.4.9
 tgcrypto
 py-tgcalls
