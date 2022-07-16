@@ -18,7 +18,7 @@ async def bash(cmd):
 
 
 @bot.on_message(filters.command("bash", ".") & filters.me)
-async def bash(_, msg: Message):
+async def bash_run(_, msg: Message):
 
     await msg.edit("__Processing...__")
     try:
