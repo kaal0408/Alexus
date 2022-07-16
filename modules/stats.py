@@ -1,7 +1,7 @@
 import re
 from main.client import bot 
 from pyrogram import filters 
-from pyrogram.type import Message
+from pyrogram.types import Message
 
 STATS = []
 
