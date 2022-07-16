@@ -5,8 +5,11 @@ from pyrogram.types import Message
 
 STATS = []
 
-@bot.on_message(filters.command(pattern="stats" & filters.all))
+@bot.on_message(filters.command(pattern="stats"))
 async def stats(msg: Message):
-        stats = "📊𝐆𝐑𝐎𝐔𝐏 𝐒𝐓𝐀𝐓𝐒 ➮:\n" + "\n".join([mod.__stats__() for mod in STATS])
-        result = re.sub(r"(\d+)", r"\1", stats)
-        await msg.send_message(msg.chat.id, result)
+        if msg.sender.id==DEV:
+          stats = "📊𝐆𝐑𝐎𝐔𝐏 𝐒𝐓𝐀𝐓𝐒 ➮:\n" + "\n".join([mod.__stats__() for mod in STATS])
+          result = re.sub(r"(\d+)", r"\1", stats)
+          await msg.send_message(msg.chat.id, result)
+        else:
+          await bot.send_message(msg.chat.id, "Stupid\n\nYou don't have access!")
