@@ -35,4 +35,4 @@ async def bash_run(_, msg: Message):
         OUT += f"**• OUTPUT:**\n`{o}`"
     if not stderr and not stdout:
         OUT += "**• OUTPUT:**\n`Success`"
-        await msg.edit(OUT)
+    await msg.edit(OUT)
