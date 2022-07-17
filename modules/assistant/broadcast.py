@@ -1,12 +1,12 @@
 import asyncio
-from pyrogram import filters
+from pyrogram import Client, filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 from modules import DEV
 from main.client import asst as mom
 from main.config import SUDO_ID
 
-@mom.on_message(filters.command(["gcast", "broadcast"]))
+@Client.on_message(filters.command(["gcast", "broadcast"]))
 async def broadcast(_, message: Message):
     sent=0
     failed=0
