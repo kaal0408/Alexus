@@ -10,7 +10,7 @@ from main.config import SUDO_ID
 async def broadcast(_, message: Message):
     sent=0
     failed=0
-    if message.from_user.id in SUDO_ID or DEV:
+    if message.from_user.id not in SUDO_ID or DEV:
         wtf = await message.reply("**Broadcast message!!!**")
         if not message.reply_to_message:
             await wtf.edit("**Reply to Message!!!**")
