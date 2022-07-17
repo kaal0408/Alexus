@@ -3,10 +3,10 @@ from pyrogram import filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 from modules import DEV
-from main.client import bot 
+from main.client import asst
 from main.config import SUDO_ID
 
-@Client.on_message(filters.command(["gcast", "broadcast"]))
+@asst.on_message(filters.command(["gcast", "broadcast"]))
 async def broadcast(_, message: Message):
     sent=0
     failed=0
