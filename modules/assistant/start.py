@@ -4,7 +4,7 @@ from pyrogram import filters
 from main.client import asst
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-@asst.on_message(command("start") & filters.private)
+@asst.on_message(filters.command("start") & filters.private)
 async def sstart(_,message : Message):
     await message.reply_text(
     f""" **ᴀ ᴡᴀʀᴍ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴀʟᴇxᴜs !!
