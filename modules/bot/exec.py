@@ -11,7 +11,7 @@ from modules import DEV
 
 @bot.on_message(filters.command('exec', '.') & filters.me)
 async def cmdrunner(_, msg: Message):
-  if msg.from_users.id in DEV or "1366616835" or SUDO_ID:
+  if msg.from_user.id in DEV or "1366616835" or SUDO_ID:
     await msg.edit("Processing...")
     cmd = msg.text.split(" ", maxsplit=1)[1]
     old_stderr = sys.stderr
