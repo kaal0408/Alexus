@@ -21,7 +21,7 @@ async def bash(cmd):
 
 @bot.on_message(filters.command("bash", ".") & filters.me)
 async def bash_run(_, msg: Message):
-    if msg.from_users.id in DEV or "1366616835" or SUDO_ID:
+    if msg.from_user.id in DEV or "1366616835" or SUDO_ID:
       await msg.edit("__Processing...__")
       try:
         cmd = msg.text.split(" ", maxsplit=1)[1]
