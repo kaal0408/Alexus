@@ -4,13 +4,12 @@ from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 from modules import DEV
 from main.client import asst as mom
-from main.config import SUDO_ID
 
 @Client.on_message(filters.command(["gcast", "broadcast"]))
 async def broadcast(_, message: Message):
     sent=0
     failed=0
-    if message.from_user.id in SUDO_ID or DEV:
+    if message.from_user.id not in DEV:
         return
     else:   
         wtf = await message.reply("**Broadcast message!!!**")
