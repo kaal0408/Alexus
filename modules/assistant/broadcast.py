@@ -16,9 +16,9 @@ async def broadcast(_, message: Message):
             await wtf.edit("**Reply to Message!!!**")
             return
         lmao = message.reply_to_message.text
-        async for dialog in bot.iter_dialogs():
+        async for dialog in asst.iter_dialogs():
             try:
-                await bot.send_message(dialog.chat.id, lmao)
+                await asst.send_message(dialog.chat.id, lmao)
                 sent = sent+1
                 await wtf.edit(f"**Broadcast !!!** \n\n**✔️Sent to:** `{sent}` **Chats** \n**❌  Failed in:** `{failed}` **Chats**")
                 await asyncio.sleep(3)
