@@ -11,6 +11,8 @@ async def broadcast(_, message: Message):
     sent=0
     failed=0
     if message.from_user.id not in SUDO_ID or DEV:
+        return
+    else:   
         wtf = await message.reply("**Broadcast message!!!**")
         if not message.reply_to_message:
             await wtf.edit("**Reply to Message!!!**")
@@ -26,6 +28,4 @@ async def broadcast(_, message: Message):
                 failed=failed+1
         await wtf.delete()
         await message.reply_text(f"**Totally Broadcast !!!**\n\n**✔ Sent To:** `{sent}` **Chats**\n**❌  Failed  in* `{failed}` **Chats**")
-    else:
-        return await bot.send_message(message.chat.id, "You can't do this stupid!")
-        
+    
