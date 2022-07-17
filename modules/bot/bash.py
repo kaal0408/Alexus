@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from main.client import bot
 from modules import DEV
-from main.cofig import SUDO_ID 
+from main.config import SUDO_ID 
 
 async def bash(cmd):
     process = await asyncio.create_subprocess_shell(
