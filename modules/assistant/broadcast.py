@@ -6,7 +6,7 @@ from modules import DEV
 from main.client import asst as mom
 from main.config import SUDO_ID
 
-@asst.on_message(filters.command(["gcast", "broadcast"]))
+@mom.on_message(filters.command(["gcast", "broadcast"]))
 async def broadcast(_, message: Message):
     sent=0
     failed=0
