@@ -9,12 +9,15 @@ async def sstart(_,message : Message):
     await message.reply_text(
     f""" **ᴀ ᴡᴀʀᴍ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴀʟᴇxᴜs !!
     ɪ'ᴍ ʏᴏᴜʀ ᴀᴅᴠᴀɴᴄᴇ ʙᴏᴛ ɴᴏ ʟᴀɢ ɢʀᴏᴜᴘ ᴠᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ
-    ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ ➪ [ᴅᴇᴠ](https://t.me/Alone_loverBoy) ᴀɴᴅ [ᴅᴇᴠ](https://t.me/nobitadev)** """,
+
+    ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ ➪ [ᴅᴇᴠ](https://t.me/Alone_loverBoy) ᴀɴᴅ [ᴅᴇᴠ](https://t.me/nobitadev)
+
+   ☺️ ᴋᴇᴇᴘ sᴍɪʟᴇ ᴏɴ ʏᴏᴜʀ ғᴀᴄᴇ Aʟᴡᴀʏs ☺️** """,
 reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🇦 🇩 🇩  🇲 🇪", url=f"https://t.me/alexusMusic_Bot?startgroup=true")
+                        "♢🇦 🇩 🇩   🇲 🇪♢", url=f"https://t.me/alexusMusic_Bot?startgroup=true")
                 ]
 
             ]
