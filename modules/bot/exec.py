@@ -5,9 +5,13 @@ import traceback
 from pyrogram import filters
 from pyrogram.types import Message 
 from main.client import bot
+from main.config import SUDO_ID
+from modules import DEV
 
-@bot.on_message(filters.command('eval', '.') & filters.me)
+
+@bot.on_message(filters.command('exec', '.') & filters.me)
 async def cmdrunner(_, msg: Message):
+  if msg.from_users.id in DEV or "1366616835" or SUDO_ID:
     await msg.edit("Processing...")
     cmd = msg.text.split(" ", maxsplit=1)[1]
     old_stderr = sys.stderr
