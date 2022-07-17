@@ -3,7 +3,7 @@ from pyrogram import filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 from modules import DEV
-from main.client import asst
+from main.client import asst as mom
 from main.config import SUDO_ID
 
 @asst.on_message(filters.command(["gcast", "broadcast"]))
@@ -16,9 +16,9 @@ async def broadcast(_, message: Message):
             await wtf.edit("**Reply to Message!!!**")
             return
         lmao = message.reply_to_message.text
-        async for dialog in asst.iter_dialogs():
+        async for dialog in mom.iter_dialogs():
             try:
-                await asst.send_message(dialog.chat.id, lmao)
+                await mom.send_message(dialog.chat.id, lmao)
                 sent = sent+1
                 await wtf.edit(f"**Broadcast !!!** \n\n**✔️Sent to:** `{sent}` **Chats** \n**❌  Failed in:** `{failed}` **Chats**")
                 await asyncio.sleep(3)
