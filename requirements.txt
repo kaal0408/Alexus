@@ -2,5 +2,6 @@ requests
 Pyrogram==1.4.9
 tgcrypto
 py-tgcalls
-youtube_dl
+youtube_dl 
+youtube_search
 git+https://github.com/alexmercerind/youtube-search-python@main
