@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.errors import UserAlreadyParticipant
-from main.client import asst
+from main.client import asst, bot
 from helpers.decorators import authorized_users_only, errors
-from services.callsmusic.callsmusic import client as USER
+# from services.callsmusic.callsmusic import client as USER
 
 
 @asst.on_message(filters.command(["join"]) & ~filters.private & ~filters.bot)
@@ -19,13 +19,13 @@ async def addchannel(client, message):
         return
 
     try:
-        user = await USER.get_me()
+        user = await bot.get_me()
     except:
         user.first_name = "Music"
 
     try:
-        await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id, "I joined here as you requested")
+        await bot.join_chat(invitelink)
+        await bot.send_message(message.chat.id, "I joined here as you requested")
     except UserAlreadyParticipant:
         await message.reply_text(
             "<b>helper already in your chat</b>",
@@ -43,9 +43,9 @@ async def addchannel(client, message):
 
 
 @USER.on_message(filters.group & filters.command(["leave"]))
-async def rem(USER, message):
+async def rem(bot, message):
     try:
-        await USER.leave_chat(message.chat.id)
+        await bot.leave_chat(message.chat.id)
     except:
         await message.reply_text(
             f"<b>User couldn't leave your group! May be floodwaits."
@@ -74,13 +74,13 @@ async def addcchannel(client, message):
         return
 
     try:
-        user = await USER.get_me()
+        user = await bot.get_me()
     except:
         user.first_name = "Music"
 
     try:
-        await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id, "I joined here as you requested")
+        await bot.join_chat(invitelink)
+        await bot.send_message(message.chat.id, "I joined here as you requested")
     except UserAlreadyParticipant:
         await message.reply_text(
             "<b>helper already in your channel</b>",
