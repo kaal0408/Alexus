@@ -1,5 +1,5 @@
 from asyncio.queues import QueueEmpty
-from main.config import que
+#from main.config import que 
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -10,6 +10,7 @@ from helpers.decorators import authorized_users_only, errors
 from helpers.filters import command, other_filters
 from services.callsmusic import callsmusic
 
+que = {}
 
 @asst.on_message(filters.command("adminreset"))
 async def update_admin(_, message: Message):
