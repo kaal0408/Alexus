@@ -42,7 +42,7 @@ async def addchannel(client, message):
     )
 
 
-@USER.on_message(filters.group & filters.command(["leave"]))
+@bot.on_message(filters.group & filters.command(["leave"]))
 async def rem(bot, message):
     try:
         await bot.leave_chat(message.chat.id)
@@ -53,7 +53,7 @@ async def rem(bot, message):
         )
         return
 
-@Client.on_message(filters.command(["userbotjoinchannel","cjoin"]) & ~filters.private & ~filters.bot)
+@asst.on_message(filters.command(["userbotjoinchannel","cjoin"]) & ~filters.private & ~filters.bot)
 @authorized_users_only
 @errors
 async def addcchannel(client, message):
