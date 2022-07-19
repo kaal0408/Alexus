@@ -1,5 +1,5 @@
 from asyncio.queues import QueueEmpty
-from Music.config import que
+from main.config import que
 from pyrogram import filters
 from pyrogram.types import Message
 
