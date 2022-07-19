@@ -1,10 +1,11 @@
-import asyncio
+import asyncio 
+from main.client import asst
 from pyrogram import Client, filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 from modules import DEV
 from main.config import SUDO_ID
-from services.callsmusic import client as USER
+# from services.callsmusic import client as USER
 
 @Client.on_message(filters.command(["gcast", "broadcast"]))
 async def broadcast(_, message: Message):
@@ -18,7 +19,7 @@ async def broadcast(_, message: Message):
             await wtf.edit("**Reply to Message!!!**")
             return
         lmao = message.reply_to_message.text
-        async for dialog in USER.iter_dialogs():
+        async for dialog in asst.iter_dialogs():
             try:
                 await USER.send_message(dialog.chat.id, lmao)
                 sent = sent+1
