@@ -2,8 +2,7 @@
 
 from main.client import bot, asst
 from pyrogram.errors import AccessTokenInvalid, ApiIdInvalid, ApiIdPublishedFlood
-from pytgcalls import idle as pyidle
-from pytgcalls import PyTgCalls
+from services.callsmusic import run
 
 
 
@@ -17,9 +16,4 @@ if __name__ == "__main__":
     except AccessTokenInvalid:
         raise Exception("Your TOKEN is not valid.")
 
-bot = bot
-call_py = PyTgCalls(bot)
-
-call_py.start()
-print("Vc Client Started")
-pyidle()
+run()
