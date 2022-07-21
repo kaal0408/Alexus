@@ -3,7 +3,7 @@ from pytgcalls import PyTgCalls
 from main.client import bot
 from services.callsmusic import queues
 from typing import Dict
-from pytgcalls import GroupCall
+from pytgcalls.types import GroupCall
 from services.callsmusic.queues import queues
 
 bot = bot
