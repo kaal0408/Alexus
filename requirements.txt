@@ -5,3 +5,8 @@ py-tgcalls
 youtube_dl 
 youtube_search
 git+https://github.com/alexmercerind/youtube-search-python@main
+aiohttp
+aiofiles
+Pillow
+python-arq
+wget
