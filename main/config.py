@@ -1,7 +1,11 @@
 import os 
+from os import getenv
 
 #----Sudo Configuration----#
 # que = {}
-SUDO_ID = os.environ.get("SUDO_ID", "")
+SUDO_ID = list(map(int, getenv("SUDO_ID").split()))
+#----Configuration----#
 DURATION_LIMIT = os.environ.get("DURATION_LIMIT", 100)
 COMMAND_PREFIXES = (os.environ.get("COMMAND_PREFIXES", "/ !").split())
+ARQ_API_KEY = getenv("ARQ_API_KEY", "VKSSQH-SRNJYZ-MSOJAI-QALESR-ARQ")
+BOT_NAME = os.environ.get("BOT_NAME", "")
