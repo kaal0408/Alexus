@@ -39,7 +39,7 @@ from helpers.filters import command
 from helpers.filters import other_filters
 from helpers.gets import get_file_name
 from services.callsmusic import callsmusic
-from services.callsmusic import client as USER
+# from services.callsmusic import client as USER
 from services.converter.converter import convert
 from services.downloaders import youtube
 from services.queues import queues
