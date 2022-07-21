@@ -3,7 +3,7 @@ from os import getenv
 
 #----Sudo Configuration----#
 # que = {}
-SUDO_ID = list(map(int, getenv("SUDO_ID")))
+SUDO_ID = list(map(int, getenv("SUDO_ID" 1188986383)))
 #----Configuration----#
 DURATION_LIMIT = os.environ.get("DURATION_LIMIT", 100)
 COMMAND_PREFIXES = (os.environ.get("COMMAND_PREFIXES", "/ !").split())
