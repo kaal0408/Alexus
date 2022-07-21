@@ -10,3 +10,4 @@ aiofiles
 Pillow
 python-arq
 wget
+ffmpeg
