@@ -15,7 +15,7 @@ active_chats: Dict[int, Dict[str, bool]] = {}
 
 def init_instance(chat_id: int):
     if chat_id not in instances:
-        instances[chat_id] = GroupCall(bot)
+        instances[chat_id] = GroupCall(bot, binary_status=1)
 
     instance = instances[chat_id]
 
