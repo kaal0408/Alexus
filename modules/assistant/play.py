@@ -31,7 +31,7 @@ from main.config import UPDATES_CHANNEL as updateschannel
 # from main.config import que
 from function.admins import admins as a
 from helpers.admins import get_administrators
-from helpers.channelmusic import get_chat_id
+from helpers.admins import get_chat_id
 from helpers.errors import DurationLimitError
 from helpers.decorators import errors
 from helpers.decorators import authorized_users_only
