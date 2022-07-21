@@ -42,7 +42,7 @@ from services.callsmusic import callsmusic
 # from services.callsmusic import client as USER
 from services.converter.converter import convert
 from services.downloaders import youtube
-from services.queues import queues
+from services.callsmusic.queues import queues
 
 que = {}
 aiohttpsession = aiohttp.ClientSession()
