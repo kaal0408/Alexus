@@ -3,19 +3,19 @@ from pytgcalls import PyTgCalls
 from main.client import bot
 from services.callsmusic import queues
 from typing import Dict
-from pytgcalls.types import GroupCall
+# from pytgcalls.types import GroupCall
 from services.callsmusic.queues import queues
 
 bot = bot
 pytgcalls = PyTgCalls(bot)
 
-instances: Dict[int, GroupCall] = {}
+# instances: Dict[int, GroupCall] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
 
-def init_instance(chat_id: int, binary_status=1):
+def init_instance(chat_id: int):
     if chat_id not in instances:
-        instances[chat_id, binary_status=1] = GroupCall(bot)
+        instances[chat_id] = PyTgCalls(bot)
 
     instance = instances[chat_id]
 
@@ -40,7 +40,7 @@ def remove(chat_id: int):
         del active_chats[chat_id]
 
 
-def get_instance(chat_id: int) -> GroupCall:
+def get_instance(chat_id: int) -> PyTgCalls:
     init_instance(chat_id)
     return instances[chat_id]
 
