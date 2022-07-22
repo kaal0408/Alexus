@@ -3,13 +3,13 @@ from pytgcalls import PyTgCalls
 from main.client import bot
 from services.callsmusic import queues
 from typing import Dict
-# from pytgcalls.types import GroupCall
+from pytgcalls.types import GroupCall
 from services.callsmusic.queues import queues
 
 bot = bot
 pytgcalls = PyTgCalls(bot)
 
-# instances: Dict[int, GroupCall] = {}
+instances: Dict[int, PyTgCalls] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
 
@@ -29,7 +29,7 @@ def init_instance(chat_id: int):
             instance.input_filename = queues.get(chat_id)["file"]
 
 
-def remove(chat_id: int):
+def remove(client: PyTgCalls, chat_id: int):
     if chat_id in instances:
         del instances[chat_id]
 
@@ -40,17 +40,17 @@ def remove(chat_id: int):
         del active_chats[chat_id]
 
 
-def get_instance(chat_id: int) -> PyTgCalls:
+def get_instance(client:PyTgCalls, chat_id: int):
     init_instance(chat_id)
     return instances[chat_id]
 
 
-async def start(chat_id: int):
+async def start(client: PyTgCalls, chat_id: int):
     await get_instance(chat_id).start(chat_id)
     active_chats[chat_id] = {"playing": True, "muted": False}
 
 
-async def stop(chat_id: int):
+async def stop(client: PyTgCalls, chat_id: int):
     await get_instance(chat_id).stop()
 
     if chat_id in active_chats:
