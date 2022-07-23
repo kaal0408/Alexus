@@ -593,7 +593,9 @@ async def play(_, message: Message):
         await lel.edit("📻 **Processing**")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
-            # results = YoutubeSearch(query, max_results=6).to_dict()
+           results = YoutubeSearch(query, max_results=6).to_dict()
+        except:
+          await lel.edit("Give me something to play")
             # url = f"https://youtube.com{results[0]['url_suffix']}"
             # title = results[0]["title"][:40]
             # thumbnail = results[0]["thumbnails"][0]
@@ -603,9 +605,11 @@ async def play(_, message: Message):
             # duration = results[0]["duration"]
             # results[0]["url_suffix"]
             # views = results[0]["views"]
-
+        try:
+            toxxt = "**Select the song you want to play**\n\n"
             j = 0
-            emojilist = ["1️","2️","3️","4️","5️", "6"]
+            useer=user_name
+            emojilist = ["1️","2️","3️","4️","5️","6"]
             toxxt = "**Select the song you want to play**\n\n"
             while j < 6:
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
@@ -618,16 +622,17 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton("1", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("2", callback_data=f'plll 1|{query}|{user_id}'),
                     ],
                     [
+                        InlineKeyboardButton("2", callback_data=f'plll 1|{query}|{user_id}'),
                         InlineKeyboardButton("3", callback_data=f'plll 2|{query}|{user_id}'),
+                    ],
+                    [
                         InlineKeyboardButton("4", callback_data=f'plll 3|{query}|{user_id}'),
                     ],
                     [ 
                         InlineKeyboardButton("5", callback_data=f'plll 4|{query}|{user_id}'),
                         InlineKeyboardButton("6", callback_data=f'plll 5|{query}|{user_id}'),
-
                         
                     ]
 
