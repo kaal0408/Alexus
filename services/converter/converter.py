@@ -4,7 +4,7 @@ from os import path
 class FFmpegReturnCodeError(Exception):
     pass
   
-async def convert(file_path: str) -> str:
+async def convert(file_path):
     out = path.basename(file_path)
     out = out.split(".")
     out[-1] = "raw"
