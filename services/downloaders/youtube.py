@@ -1,34 +1,53 @@
 from os import path
-import yt_dlp
-from yt_dlp.utils import DownloadError
 
-ytdl = yt_dlp.YoutubeDL(
-    {
-        "outtmpl": "downloads/%(id)s.%(ext)s",
-        "format": "bestaudio/best",
-        "geo_bypass": True,
-        "nocheckcertificate": True,
-    }
- )
+from youtube_dl import YoutubeDL
 
+from main.config import DURATION_LIMIT
 
-def download(url: str, my_hook) -> str:       
-    ydl_optssx = {
-        'format' : 'bestaudio/best',
-        "outtmpl": "downloads/%(id)s.%(ext)s",
-        "geo_bypass": True,
-        "nocheckcertificate": True,
-        'quiet': True,
-        'no_warnings': True,
-    }
-    info = ytdl.extract_info(url, False)
+from helpers.errors import DurationLimitError
+
+ydl_opts = {
+
+    "format": "bestaudio[ext=m4a]",
+
+    "geo-bypass": True,
+
+    "nocheckcertificate": True,
+
+    "outtmpl": "downloads/%(id)s.%(ext)s",
+
+}
+
+ydl = YoutubeDL(ydl_opts)
+
+def download(url: str) -> str:
+
+    info = ydl.extract_info(url, False)
+
+    duration = round(info["duration"] / 60)
+
+    if duration > DURATION_LIMIT:
+
+        raise DurationLimitError(
+
+            f"🛑 Videos longer than {DURATION_LIMIT} minute(s) aren't allowed, "
+
+            f"the provided video is {duration} minute(s)",
+
+        )
+
     try:
-        x = yt_dlp.YoutubeDL(ydl_optssx)
-        x.add_progress_hook(my_hook)
-        dloader = x.download([url])
-    except Exception as y_e:
-        return print(y_e)
-    else:
-        dloader
-    xyz = path.join("downloads", f"{info['id']}.{info['ext']}")
-    return xyz
+
+        ydl.download([url])
+
+    except:
+
+        raise DurationLimitError(
+
+            f"🛑 Videos longer than {DURATION_LIMIT} minute(s) aren't allowed, "
+
+            f"the provided video is {duration} minute(s)",
+
+        )
+
+    return path.join("downloads", f"{info['id']}.{info['ext']}")
