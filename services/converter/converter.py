@@ -2,7 +2,7 @@ import asyncio
 
 from os import path
 
-from Musical.helpers.errors import FFmpegReturnCodeError
+from helpers.errors import FFmpegReturnCodeError
 
 async def convert(file_path: str) -> str:
 
