@@ -682,7 +682,7 @@ async def play(_, message: Message):
             await generate_cover(requested_by, title, views, duration, thumbnail)
             file_path = await convert(youtube.download(url))   
     chat_id = get_chat_id(message.chat)
-    if chat_id in callsmusic.active_chats:
+    if chat_id in callsmusic.pyrgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
         s_name = title
