@@ -43,6 +43,7 @@ from services.callsmusic import callsmusic
 # from services.callsmusic import client as USER
 from services.converter.converter import convert
 from services.downloaders import youtube
+from services.downloaders.youtube import download 
 from services.callsmusic.queues import queues
 
 DISABLED_GROUPS = []
