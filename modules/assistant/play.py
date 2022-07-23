@@ -584,7 +584,55 @@ async def play(_, message: Message):
         )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
-        file_path = await convert(youtube.download(url))        
+        def my_hook(d): 
+            if d['status'] == 'downloading':
+                percentage = d['_percent_str']
+                per = (str(percentage)).replace(".","", 1).replace("%","", 1)
+                per = int(per)
+                eta = d['eta']
+                speed = d['_speed_str']
+                size = d['_total_bytes_str']
+                bytesx = d['total_bytes']
+                if str(bytesx) in flex:
+                    pass
+                else:
+                    flex[str(bytesx)] = 1
+                if flex[str(bytesx)] == 1:
+                    flex[str(bytesx)] += 1
+                    try:
+                        if eta > 2:
+                            mystic.edit(f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                    except Exception as e:
+                        pass
+                if per > 250:    
+                    if flex[str(bytesx)] == 2:
+                        flex[str(bytesx)] += 1
+                        if eta > 2:     
+                            mystic.edit(f"Downloading {title[:50]}..\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                        print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds")
+                if per > 500:    
+                    if flex[str(bytesx)] == 3:
+                        flex[str(bytesx)] += 1
+                        if eta > 2:     
+                            mystic.edit(f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                        print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds")
+                if per > 800:    
+                    if flex[str(bytesx)] == 4:
+                        flex[str(bytesx)] += 1
+                        if eta > 2:    
+                            mystic.edit(f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                        print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds")
+            if d['status'] == 'finished': 
+                try:
+                    taken = d['_elapsed_str']
+                except Exception as e:
+                    taken = "00:00"
+                size = d['_total_bytes_str']
+                mystic.edit(f"**Downloaded {title[:50]}.....**\n\n**FileSize:** {size}\n**Time Taken:** {taken} sec\n\n**Converting File**[__FFmpeg processing__]")
+                print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")  
+        loop = asyncio.get_event_loop()
+        x = await loop.run_in_executor(None, download, link, my_hook)
+        file_path = await convert(x)        
     else:
         query = ""
         for i in message.command[1:]:
@@ -594,16 +642,13 @@ async def play(_, message: Message):
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         
         try:
-          results = YoutubeSearch(query, max_results=6).to_dict()
-        except:
-          await lel.edit("Give me something to play")
-        try:
+            results = YoutubeSearch(query, max_results=5).to_dict()
             toxxt = "**Select the song you want to play**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["1","2","3","4","5","6"]
+            emojilist = ["1","2","3","4","5"]
 
-            while j < 6:
+            while j < 5:
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
                 toxxt += f" ⏳ <b>Duration</b> - {results[j]['duration']}\n"
                 toxxt += f" 👁 <b>Views</b> - {results[j]['views']}\n"
@@ -621,12 +666,8 @@ async def play(_, message: Message):
                     ],
                     [
                         InlineKeyboardButton("4", callback_data=f'plll 3|{query}|{user_id}'),
-                    ],
-                    [ 
                         InlineKeyboardButton("5", callback_data=f'plll 4|{query}|{user_id}'),
-                        InlineKeyboardButton("6", callback_data=f'plll 5|{query}|{user_id}'),
-                        
-                    ]
+                    ],
                     [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
                 ]
             )       
@@ -680,7 +721,55 @@ async def play(_, message: Message):
             )
             requested_by = message.from_user.first_name
             await generate_cover(requested_by, title, views, duration, thumbnail)
-            file_path = await convert(youtube.download(url))   
+            def my_hook(d): 
+        if d['status'] == 'downloading':
+            percentage = d['_percent_str']
+            per = (str(percentage)).replace(".","", 1).replace("%","", 1)
+            per = int(per)
+            eta = d['eta']
+            speed = d['_speed_str']
+            size = d['_total_bytes_str']
+            bytesx = d['total_bytes']
+            if str(bytesx) in flex:
+                pass
+            else:
+                flex[str(bytesx)] = 1
+            if flex[str(bytesx)] == 1:
+                flex[str(bytesx)] += 1
+                try:
+                    if eta > 2:
+                        mystic.edit(f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                except Exception as e:
+                    pass
+            if per > 250:    
+                if flex[str(bytesx)] == 2:
+                    flex[str(bytesx)] += 1
+                    if eta > 2:     
+                        mystic.edit(f"Downloading {title[:50]}..\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                    print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds")
+            if per > 500:    
+                if flex[str(bytesx)] == 3:
+                    flex[str(bytesx)] += 1
+                    if eta > 2:     
+                        mystic.edit(f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                    print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds")
+            if per > 800:    
+                if flex[str(bytesx)] == 4:
+                    flex[str(bytesx)] += 1
+                    if eta > 2:    
+                        mystic.edit(f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec")
+                    print(f"[{videoid}] Downloaded {percentage} at a speed of {speed} | ETA: {eta} seconds")
+        if d['status'] == 'finished': 
+            try:
+                taken = d['_elapsed_str']
+            except Exception as e:
+                taken = "00:00"
+            size = d['_total_bytes_str']
+            mystic.edit(f"**Downloaded {title[:50]}.....**\n\n**FileSize:** {size}\n**Time Taken:** {taken} sec\n\n**Converting File**[__FFmpeg processing__]")
+            print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")    
+    loop = asyncio.get_event_loop()
+    x = await loop.run_in_executor(None, download, url, my_hook)
+    file_path = await convert(x)   
     chat_id = get_chat_id(message.chat)
     if chat_id in callsmusic.pyrgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
