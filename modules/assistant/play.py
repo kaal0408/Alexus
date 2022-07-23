@@ -22,7 +22,7 @@ from main.config import ARQ_API_KEY
 from main.config import BOT_NAME as bn
 from main.config import DURATION_LIMIT
 # from main.config import UPDATES_CHANNEL as updateschannel
-from main.config import que
+# from main.config import que
 from function.admins import admins as a
 from helpers.admins import get_administrators
 from helpers.admins import get_chat_id
@@ -36,6 +36,7 @@ from services.callsmusic import callsmusic, queues
 from services.converter.converter import convert
 from services.downloaders import youtube
 
+que = {}
 aiohttpsession = aiohttp.ClientSession()
 chat_id = None
 arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
