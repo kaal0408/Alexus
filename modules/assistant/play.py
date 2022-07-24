@@ -607,7 +607,7 @@ async def play(_, message: Message):
                 message.from_user.mention()
             ),
         ) 
-        expect:
+        except:
           return
         os.remove("final.png")
         return await lel.delete()
