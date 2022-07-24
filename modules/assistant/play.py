@@ -600,7 +600,7 @@ async def play(_, message: Message):
         try:
            await callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         except:
-            message.reply("Group Call is not connected or I can't join it")
+           await message.reply("Group Call is not connected or I can't join it")
             return
         await message.reply_photo(
             photo="final.png",
@@ -731,9 +731,9 @@ async def jiosaavn(client: Client, message_: Message):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
         try:
-            callsmusic.pytgcalls.join_group_call(chat_id, file_path)
+          await callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         except:
-            res.edit("Group call is not connected of I can't join it")
+            await res.edit("Group call is not connected of I can't join it")
             return
     await res.edit("Generating Thumbnail.")
     await generate_cover(requested_by, sname, ssingers, sduration, sthumb)
