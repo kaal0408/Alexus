@@ -387,7 +387,7 @@ async def play(_, message: Message):
     chid = message.chat.id
 
     try:
-        bot = await bot.get_me()
+        user = await bot.get_me()
     except:
         user.first_name = "helper"
     usar = user
