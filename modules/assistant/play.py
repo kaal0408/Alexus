@@ -598,14 +598,17 @@ async def play(_, message: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await callsmusic.pytgcalls.join_group_call(chat_id, AudioPiped(file_path))
+        try:
+        await callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
             caption="▶️ **Playing** here the song requested by {} via Youtube Music🎼".format(
                 message.from_user.mention()
             ),
-        )
+        ) 
+        expect:
+          return
         os.remove("final.png")
         return await lel.delete()
 
