@@ -13,7 +13,7 @@ ytdl = yt_dlp.YoutubeDL(
  )
 
 
-def download(url: str, my_hook) -> str:       
+def download(url: str) -> str:       
     ydl_optssx = {
         'format' : 'bestaudio/best',
         "outtmpl": "downloads/%(id)s.%(ext)s",
