@@ -601,7 +601,7 @@ async def play(_, message: Message):
            await callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         except:
            await message.reply("Group Call is not connected or I can't join it")
-            return
+           return
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
