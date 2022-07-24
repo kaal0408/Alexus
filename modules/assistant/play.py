@@ -17,6 +17,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 
+from pytgcalls.types import AudioPiped
 from main.client import bot, asst
 from main.config import ARQ_API_KEY
 from main.config import BOT_NAME as bn
