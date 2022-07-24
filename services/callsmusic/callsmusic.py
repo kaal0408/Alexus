@@ -2,9 +2,14 @@
 from pytgcalls import PyTgCalls
 from main.client import bot
 from services.callsmusic import queues
-from typing import Dict
+#f rom typing import Dict
 # from pytgcalls.types import GroupCall
 from services.callsmusic.queues import queues
+from pytgcalls.types import Update
+# for check
+from pytgcalls.types.input_stream import InputStream
+#for play
+from pytgcalls.types.input_stream import InputAudioStream
 
 bot = bot
 pytgcalls = PyTgCalls(bot)
