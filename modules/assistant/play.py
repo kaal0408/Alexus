@@ -426,7 +426,7 @@ async def m_cb(chat, cb):
                 callsmusic.pytgcalls.stop(chet_id)
                 await cb.message.edit("- No More Playlist..\n- Leaving VC!")
             else:
-                await callsmusic.set_stream(
+                await callsmusic.pytgcalls.set_stream(
                     chet_id, queues.get(chet_id)["file"]
                 )
                 await cb.answer.reply_text("✅ <b>Skipped</b>")
@@ -736,7 +736,7 @@ async def play(_, message: Message):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
         try:
-            await callsmusic.set_stream(chat_id, file_path)
+            await callsmusic.pytgcalls.set_stream(chat_id, file_path)
         except:
             message.reply("Group Call is not connected or I can't join it")
             return
@@ -894,7 +894,7 @@ async def ytplay(_, message: Message):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
         try:
-           await callsmusic.set_stream(chat_id, file_path)
+           await callsmusic.pytgcalls.set_stream(chat_id, file_path)
         except:
             message.reply("Group Call is not connected or I can't join it")
             return
@@ -1036,7 +1036,7 @@ async def jiosaavn(client: Client, message_: Message):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
         try:
-            await callsmusic.set_stream(chat_id, file_path)
+            await callsmusic.pytgcalls.set_stream(chat_id, file_path)
         except:
             res.edit("Group call is not connected of I can't join it")
             return
@@ -1150,7 +1150,7 @@ async def lol_cb(b, cb):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
     
-        await callsmusic.set_stream(chat_id, file_path)
+        await callsmusic.pytgcalls.set_stream(chat_id, file_path)
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
