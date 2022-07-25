@@ -13,6 +13,8 @@ from services.callsmusic import callsmusic
 que = {}
 
 @asst.on_message(filters.command("adminreset"))
+@errors
+@authorized_users_only
 async def update_admin(_, message: Message):
     chat_id = get_chat_id(message.chat)
     set(
@@ -23,81 +25,9 @@ async def update_admin(_, message: Message):
         ],
     )
     await message.reply_text("❇️ Admin cache refreshed!")
-
-
-@asst.on_message(command("pause") & other_filters)
-@errors
-@authorized_users_only
-async def pause(_, message: Message):
-    chat_id = get_chat_id(message.chat)
-    if (chat_id not in callsmusic.pytgcalls.active_calls) or (
-        callsmusic.pytgcalls.active_calls[chat_id] == "paused"
-    ):
-        await message.reply_text("❗ Nothing is playing!")
-    else:
-        callsmusic.pytgcalls.pause_stream(chat_id)
-        await message.reply_text(" Paused!")
-
-
-@asst.on_message(command("resume") & other_filters)
-@errors
-@authorized_users_only
-async def resume(_, message: Message):
-    chat_id = get_chat_id(message.chat)
-    if (chat_id not in callsmusic.pytgcalls.active_calls) or (
-        callsmusic.pytgcalls.active_calls[chat_id] == "playing"
-    ):
-        await message.reply_text("❗ Nothing is paused!")
-    else:
-        callsmusic.pytgcalls.resume_stream(chat_id)
-        await message.reply_text("Resumed!")
-
-
-@asst.on_message(command("end") & other_filters)
-@errors
-@authorized_users_only
-async def stop(_, message: Message):
-    chat_id = get_chat_id(message.chat)
-    if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ Nothing is streaming!")
-    else:
-        try:
-            callsmusic.queues.clear(chat_id)
-        except QueueEmpty:
-            pass
-
-        callsmusic.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text("❌ Stopped streaming!")
-
-
-@asst.on_message(command("skip") & other_filters)
-@errors
-@authorized_users_only
-async def skip(_, message: Message):
-    global que
-    chat_id = get_chat_id(message.chat)
-    if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ Nothing is playing to skip!")
-    else:
-        callsmusic.queues.task_done(chat_id)
-
-        if callsmusic.queues.is_empty(chat_id):
-            callsmusic.pytgcalls.leave_group_call(chat_id)
-        else:
-            callsmusic.pytgcalls.change_stream(
-                chat_id, callsmusic.queues.get(chat_id)["file"]
-            )
-
-    qeue = que.get(chat_id)
-    if qeue:
-        skip = qeue.pop(0)
-    if not qeue:
-        return
-    await message.reply_text(f"- Skipped **{skip[0]}**\n- Now Playing **{qeue[0][0]}**")
-
-
 @asst.on_message(filters.command("admincache"))
 @errors
+@authorized_users_only
 async def admincache(_, message: Message):
     set(
         message.chat.id,
@@ -107,3 +37,66 @@ async def admincache(_, message: Message):
         ],
     )
     await message.reply_text("❇️ Admin cache refreshed!")
+
+@asst.on_message(filters.command("pause"))
+@errors
+@authorized_users_only
+async def pause(_, message: Message):
+    await message.delete()
+    await callsmusic.pytgcalls.pause_stream(message.chat.id)
+    await message.reply_text("**▶️P A U S U D!**")
+
+
+@asst.on_message(filters.command("resume"))
+@errors
+@authorized_users_only
+async def resume(_, message: Message):
+    await message.delete()
+    await callsmusic.pytgcalls.resume_stream(message.chat.id)
+    await message.reply_text("**⏸R E S U M E D**")
+
+
+
+@asst.on_message(filters.command("skip"))
+@errors
+@authorized_users_only
+async def skip(_, message: Message):
+    global que
+    await message.delete()
+    ACTV_CALLS = []
+    chat_id = message.chat.id
+    for x in callsmusic.pytgcalls.active_calls:
+        ACTV_CALLS.append(int(x.chat_id))
+    if int(chat_id) not in ACTV_CALLS:
+        await message.reply_text("**NOTHING IS STREAMING‼️**")
+    else:
+        queues.task_done(chat_id)
+        
+        if queues.is_empty(chat_id):
+            await message.reply_text("**QUEUE is Empty so,\nLeaving Voice Chat🏐**") 
+            await callsmusic.pytgcalls.leave_group_call(chat_id)
+        else:
+            await message.reply_text("**⏩__S K I P P E D__ To Next Teack**") 
+            await callsmusic.pytgcalls.change_stream(
+                chat_id, 
+                InputStream(
+                    InputAudioStream(
+                        callsmusic.queues.get(chat_id)["file"],
+                    ),
+                ),
+            )
+
+
+@asst.on_message(filters.command("end"))
+@errors
+@authorized_users_only
+async def stop(_, message: Message):
+    await message.delete()
+    try:
+        callsmusic.queues.clear(message.chat.id)
+    except QueueEmpty:
+        pass
+
+    await callsmusic.pytgcalls.leave_group_call(message.chat.id)
+    await message.reply_text("**❌__VC F I N I S H E D__**"
+    )
