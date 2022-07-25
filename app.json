@@ -24,7 +24,8 @@
     },
     "DURATION_LIMIT": {
     "description": "Duration limit in min. Default is 5min",
-    "value": ""
+    "value": "",
+    "required": false
     },
     "SUDO_ID": {
     "description": "Your Main account id", 
