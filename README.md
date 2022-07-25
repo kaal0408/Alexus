@@ -10,7 +10,7 @@
 <hr>
 </hr> 
 
-<i><h3> 𝚂𝚃𝙰𝚃𝚄𝚂 𝙾𝙵 𝙱𝙾𝚃 </h3></i>
+<h3> sᴛᴀᴛᴜs ᴏғ ʙᴏᴛ </h3>
 <br>
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/Silent-Devs/Alexus)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?&style=flat-square)]( https://github.com/Silent-Devs/Alexus#copyright--license)
