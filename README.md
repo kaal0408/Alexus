@@ -47,7 +47,7 @@
 
 # <i><b> sᴜᴘᴘoʀᴛ 🏪</b></i>
 
-<a href="https://telegram.me/" target="_blank"><img src="https://img.shields.io/badge/Join-our%20Channel-yellow.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://telegram.me/TeamAlexus" target="_blank"><img src="https://img.shields.io/badge/Join-our%20Channel-yellow.svg?style=for-the-badge&logo=Telegram"></a>
 
 <a href="https://telegram.me/SilentDevs" target="_blank"><img src="https://img.shields.io/badge/Join-our%20Support-brown.svg?style=for-the-badge&logo=Telegram"></a>
 
