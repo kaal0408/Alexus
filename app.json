@@ -22,11 +22,6 @@
      "description": "your bot token pls",
      "value": ""
     },
-    "DURATION_LIMIT": {
-    "description": "Duration limit in min. Default is 5min",
-    "value": "",
-    "required": false
-    },
     "SUDO_ID": {
     "description": "Your Main account id", 
     "value": ""
