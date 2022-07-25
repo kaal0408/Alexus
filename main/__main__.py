@@ -8,6 +8,7 @@ from services.callsmusic import run
 
 if __name__ == "__main__":
     try:
+        run()
         asst.start()  # Not using run as wanna print 
         print("•×•Yeahhhh boi Assistant bot Started•×•")
        # bot.run() # using run for session client
@@ -16,4 +17,4 @@ if __name__ == "__main__":
     except AccessTokenInvalid:
         raise Exception("Your TOKEN is not valid.")
 
-run()
+
