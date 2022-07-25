@@ -28,3 +28,15 @@ sᴏᴍᴇ ᴏғ ᴛʜᴇ ᴍᴀɴᴅᴀᴛᴏʀʏ ᴠᴀʀs ᴀʀᴇ :-
 - ᴀᴘɪ ɪᴅ ᴀɴᴅ ʜᴀsʜ
 - sᴛʀɪɴɢ sᴇssɪᴏɴ
 
+Command | Description
+• /ping | Check ping
+• /play [song name or youtube link] | Play a song in vc, if already playing add to queue
+• /playlist [playlist link] | Play the whole youtube playlist at once
+• /skip | Skip to the next song
+• /mute | Mute the current stream
+• /unmute | Unmute the muted stream
+• /pause | Pause the current stream
+• /resume | Resume the paused stream
+• /stop | Leave from vc and clear the queue
+
+
