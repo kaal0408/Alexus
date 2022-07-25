@@ -20,3 +20,9 @@ sᴏᴍᴇ ᴏғ ᴛʜᴇ ᴍᴀɴᴅᴀᴛᴏʀʏ ᴠᴀʀs ᴀʀᴇ :-
 
 [![Deploy+On+Okteto](https://img.shields.io/badge/%E2%9A%9C%EF%B8%8F-%E1%B4%85%E1%B4%87%E1%B4%98%CA%9F%E1%B4%8F%CA%8F%20%CA%99%CA%8F%20%E1%B4%8F%E1%B4%8B%E1%B4%9B%E1%B4%87%E1%B4%9B%E1%B4%8F%20-orange)](https://cloud.okteto.com/deploy?repository=https://github.com/Silent-Devs/Alexus)
 
+## ʀᴇǫᴜɪʀᴇᴍᴇɴᴛs
+
+✮ ᴘʏʀᴏɢʀᴀᴍ 
+✮ ᴘʏ-ᴛɢᴄᴀʟʟs
+✮ ᴀᴘɪ ɪᴅ ᴀɴᴅ ʜᴀsʜ
+✮ sᴛʀɪɴɢ sᴇssɪᴏɴ
