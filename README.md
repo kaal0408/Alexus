@@ -28,7 +28,10 @@ sᴏᴍᴇ ᴏғ ᴛʜᴇ ᴍᴀɴᴅᴀᴛᴏʀʏ ᴠᴀʀs ᴀʀᴇ :-
 - ᴀᴘɪ ɪᴅ ᴀɴᴅ ʜᴀsʜ
 - sᴛʀɪɴɢ sᴇssɪᴏɴ
 
+## 📄 <a name="commands"></a>Commands
+
 Command | Description
+:--- | :---
 • /ping | Check ping
 • /play [song name or youtube link] | Play a song in vc, if already playing add to queue
 • /playlist [playlist link] | Play the whole youtube playlist at once
