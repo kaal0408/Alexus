@@ -2,7 +2,7 @@
 
 from main.client import bot, asst
 from pyrogram.errors import AccessTokenInvalid, ApiIdInvalid, ApiIdPublishedFlood
-from services.callsmusic import run
+from services.callsmusic import pytgcalls
 from pytgcalls import idle
 
 
@@ -16,5 +16,5 @@ if __name__ == "__main__":
         raise Exception("Your API_ID/API_HASH is not valid.")
     except AccessTokenInvalid:
         raise Exception("Your TOKEN is not valid.")
-run()
+pytgcalls.start()
 idle()
