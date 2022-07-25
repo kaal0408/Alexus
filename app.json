@@ -22,6 +22,10 @@
      "description": "your bot token pls",
      "value": ""
     },
+    "SUDO_ID": {
+    "description": "Your Main account id", 
+    "value": ""
+    },
     "SESSION": {
       "description": "your assistance account session", 
       "value": ""
