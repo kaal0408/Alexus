@@ -5,7 +5,7 @@
 ## 𝐌𝐀𝐍𝐃𝐎𝐓𝐀𝐑𝐘 𝐕𝐀𝐑𝐒
 
 sᴏᴍᴇ ᴏғ ᴛʜᴇ ᴍᴀɴᴅᴀᴛᴏʀʏ ᴠᴀʀs ᴀʀᴇ :-
-   - API_ID :  ɢɪᴠᴇ ᴀᴘɪ_ɪᴅ ᴏғ ʏᴏᴜʀ ᴀʟᴛᴇʀɴᴀᴛᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ. ᴀʟsᴏ ɢᴇᴛ ғʀᴏᴍ ʜʜᴇʀᴇᴛᴏᴜᴄʜ ᴍᴇ](https://t.me/apiscrapperbot)
+   - API_ID :  ɢɪᴠᴇ ᴀᴘɪ_ɪᴅ ᴏғ ʏᴏᴜʀ ᴀʟᴛᴇʀɴᴀᴛᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ. ᴀʟsᴏ ɢᴇᴛ ғʀᴏᴍ ʜʜᴇʀᴇ [ᴛᴏᴜᴄʜ ᴍᴇ](https://t.me/apiscrapperbot)
    - API_HASH :  ɢɪᴠᴇ ᴀᴘɪ_ʜᴀsʜ ᴏғ ʏᴏᴜʀ ᴀʟᴛᴇʀɴᴀᴛᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ. ᴀʟsᴏ ɢᴇᴛ ғʀᴏᴍ ʜᴇʀᴇ [ᴛᴏᴜᴄʜ ᴍᴇ](https://t.me/apiscrapperbot)
    - SESSION :  ᴍᴀᴋᴇ ᴀ sᴛʀɪɴɢ sᴇssɪᴏɴ ғʀᴏᴍ [ᴛᴏᴜᴄʜ ᴍᴇ](https://replit.com/@DynamicAdi/PyroStringGen)
    - BOT_TOKEN :  ᴍᴀᴋᴇ ᴀ ʙᴏᴛ ғʀᴏᴍ [@Botfather](https://t.me/botfather) ᴀɴᴅ ғɪʟʟ ɪᴛ's ʙᴏᴛ ᴛᴏᴋᴇɴ.
