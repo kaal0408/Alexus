@@ -2,6 +2,15 @@
 
 <p align="center"><a href="https://t.me/alexusMusic_Bot"><img src="https://github.com/Silent-Devs/Alexus/raw/main/resources/white.png"></a></p>
 
+## 𝐌𝐀𝐍𝐃𝐎𝐓𝐀𝐑𝐘 𝐕𝐀𝐑𝐒
+
+sᴏᴍᴇ ᴏғ ᴛʜᴇ ᴍᴀɴᴅᴀᴛᴏʀʏ ᴠᴀʀs ᴀʀᴇ :-
+   - API_ID :  ɢɪᴠᴇ ᴀᴘɪ_ɪᴅ ᴏғ ʏᴏᴜʀ ᴀʟᴛᴇʀɴᴀᴛᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ. ᴀʟsᴏ ɢᴇᴛ ғʀᴏᴍ ʜʜᴇʀᴇᴛᴏᴜᴄʜ ᴍᴇ](https://t.me/apiscrapperbot)
+   - API_HASH :  ɢɪᴠᴇ ᴀᴘɪ_ʜᴀsʜ ᴏғ ʏᴏᴜʀ ᴀʟᴛᴇʀɴᴀᴛᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ. ᴀʟsᴏ ɢᴇᴛ ғʀᴏᴍ ʜᴇʀᴇ [ᴛᴏᴜᴄʜ ᴍᴇ](https://t.me/apiscrapperbot)
+   - SESSION :  ᴍᴀᴋᴇ ᴀ sᴛʀɪɴɢ sᴇssɪᴏɴ ғʀᴏᴍ [ᴛᴏᴜᴄʜ ᴍᴇ](https://replit.com/@DynamicAdi/PyroStringGen)
+   - BOT_TOKEN :  ᴍᴀᴋᴇ ᴀ ʙᴏᴛ ғʀᴏᴍ [@Botfather](https://t.me/botfather) ᴀɴᴅ ғɪʟʟ ɪᴛ's ʙᴏᴛ ᴛᴏᴋᴇɴ.
+   - SUDO_ID :  ғɪʟʟ ᴜsᴇʀɪᴅ ᴏғ ʏʜᴇ ᴜsᴇʀs ᴡʜᴏᴍ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ʙᴇ ᴀʙʟᴇ ᴛᴏ ᴄᴏɴᴛʀᴏʟ ᴛʜᴇ ʙᴏᴛ. ʏᴏᴜ ᴄᴀɴ ᴀᴅᴅ ᴍᴜʟᴛɪᴘʟᴇ ɪᴅ ʙʏ ɢɪᴠɪɴɢ ᴀ sᴘᴀᴄᴇ ɪɴ ʙ/ᴡ ᴇᴀᴄʜ ɪᴅ.
+
 
 ## 𝐃𝐄𝐏𝐋𝐎𝐘 𝐁𝐘 𝐇𝐄𝐑𝐎𝐊𝐔
 
