@@ -2,7 +2,7 @@
 <p align="center"><a href="https://t.me/alexusMusic_Bot"><img src="https://github.com/Silent-Devs/Alexus/raw/main/resources/white.png"></a></p>
 <h2 align="center"> The Most Smooth <br> Music Bot </h2>
 
-# About Me: 
+# ᴀʙᴏᴜᴛ ᴍᴇ: 
 <h2 align="center">I am ALexus a Music Bot to PLay Music in Telegram VC smoothly!! <br> I am created Using Python3</h2>
 
 <hr>
