@@ -1,4 +1,4 @@
-<p align="center">𝐀𝐋𝐄𝐗𝐔𝐒</p>
+<p align="center">𝐀𝐋𝐄𝐗𝐔𝐒, width='200'</p>
 <p align="center"><a href="https://t.me/alexusMusic_Bot"><img src="https://github.com/Silent-Devs/Alexus/raw/main/resources/white.png"></a></p>
 <h2 align="center">ᴛʜᴇ ᴍᴏsᴛ sᴍᴏᴏᴛʜ <br> ᴍᴜsɪᴄ ʙᴏᴛ </h2>
 
