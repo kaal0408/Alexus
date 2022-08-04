@@ -9,7 +9,7 @@ from helpers.admins import get_chat_id
 from helpers.decorators import authorized_users_only, errors
 from helpers.filters import command, other_filters
 from services.callsmusic import callsmusic
-
+from services.callsmusic.queues import queues
 que = {}
 
 @asst.on_message(filters.command("adminreset"))
