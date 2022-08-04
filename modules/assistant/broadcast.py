@@ -1,11 +1,12 @@
 import asyncio
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
-from services.callsmusic.callsmusic import client as parth
+# from services.callsmusic.callsmusic import client as parth
+from main.client import asst
 from main.config import SUDO_ID 
 
-@Client.on_message(filters.command(["gcast", "broadcast"]))
+@asst.on_message(filters.command(["gcast", "broadcast"]))
 async def broadcast(_, message: Message):
     sent=0
     failed=0
@@ -17,9 +18,9 @@ async def broadcast(_, message: Message):
             await wtf.edit("**😚 ʀᴇᴘʟʏ ᴋᴀʀᴏ ᴊᴀᴀɴ ...**")
             return
         lmao = message.reply_to_message.text
-        async for dialog in parth.iter_dialogs():
+        async for dialog in asst.iter_dialogs():
             try:
-                await parth.send_message(dialog.chat.id, lmao)
+                await asst.send_message(dialog.chat.id, lmao)
                 sent = sent+1
                 await wtf.edit(f"**😘ʙʀᴏᴀᴅᴄᴀꜱᴛɪɴɢ ʙᴀʙʏ ...** \n\n**✔️ ꜱᴇɴᴛ ᴛᴏ:** `{sent}` **ᴄʜᴀᴛꜱ** \n**❌ ꜰᴀɪʟᴇᴅ ɪɴ:** `{failed}` **ᴄʜᴀᴛꜱ**")
                 await asyncio.sleep(3)
