@@ -19,11 +19,11 @@ reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "♢🇦 🇩 🇩   🇲 🇪♢", url=f"https://t.me/alexusMusic_Bot?startgroup=true")
+                        "♢Add to your group♢", url=f"https://t.me/kaalxbot?startgroup=true")
                 ],
                 [
                     InlineKeyboardButton(
-                        "♢🇸 🇺 🇵 🇵 🇴 🇷 🇹♢", url=f"https://t.me/TeamAlexus")
+                        "♢Repo♢", url=f"https://t.me/dynamicadi")
                 ]
 
             ]
