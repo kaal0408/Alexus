@@ -70,7 +70,7 @@
 
 - <h1> H E R O K U </h1>
 
-<a href="https://heroku.com/deploy?template=https://github.com/silent-Devs/Alexus" target="_blank"><img src="https://img.shields.io/badge/DEPLOY%20TO%20HEROKU-black?style=for-the-badge&logo=heroku" height="40px" width="200px" alt="heroku" /></a>
+<a href="https://heroku.com/deploy?template=https://github.com/kaal0408/Alexus" target="_blank"><img src="https://img.shields.io/badge/DEPLOY%20TO%20HEROKU-black?style=for-the-badge&logo=heroku" height="40px" width="200px" alt="heroku" /></a>
 
 - <h1>O K T E T O </h1>
 <a href="https://cloud.okteto.com/deploy?repository=https://github.com/Silent-Devs/Alexus" target="_blank"><img src="https://okteto.com/develop-okteto.svg" alt="Develop on Okteto"></a>
