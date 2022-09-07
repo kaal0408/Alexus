@@ -19,7 +19,7 @@ reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "♢Add to your group♢", url=f"https://t.me/kaalxbot?startgroup=true")
+                        "♢Add to your group♢", url=f"https://t.me/CutE_beb3_bot?startgroup=true")
                 ],
                 [
                     InlineKeyboardButton(
